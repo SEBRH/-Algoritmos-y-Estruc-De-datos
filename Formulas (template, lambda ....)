@@ -1,0 +1,76 @@
+ template<typename T>
+T suma(T a, T b) 
+{
+    return a + b;
+}
+int main() 
+{
+    double x = 10.5, y = 20.75;
+    printf("Entero: %d\n", suma<int>(x, y));
+    printf(" Float: %f\n", suma<float>(x, y));
+    printf("Double: %lf\n", suma<double>(x, y));
+    return 0;
+}
+
+// Este es para sumar con template ( se pueden cambiar si es int float etc...)
+
+=======================================================================================================================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int sum = [] (int x, int y) { return x+y;}(5,4);
+    auto mul = [] (int x, int y) { return x*y;};
+    cout<< "suma(5,4)=> "<<sum<<endl;
+    cout<< "mul(5,4)=> "<<mul(5,4)<<endl;
+
+}
+
+// Este es lambda
+
+=======================================================================================================================================================================
+#include <iostream>
+using namespace std;
+int factorial(int n) {
+    if (n == 0) 
+    {
+        return 1;
+    } else 
+    {
+        return n * factorial(n-1);
+    }
+}
+int main() {
+    int numero;
+    cout<<"Ingresar un nÃºmero: ";
+    cin>>numero;
+    cout<<"El factorial del nÃºmero "<<numero<<" es: "<<factorial(numero);
+    
+    return 0;
+}
+// Este busca factorial
+=================================================================================================================================================================
+
+#include <iostream>
+int main() {
+	int arreglo[] = { 2,4,6,7,9,10,11 };
+	int n = 6;
+	int inf = 0;
+	int sup = n - 1;
+	int pos = -1;
+	int clave = 10;
+	while ((pos == -1) && (sup >= inf)) {
+		int medio = (inf + sup) / 2;
+		if (arreglo[medio] == clave)
+			pos = medio;
+		else if (arreglo[medio] < clave)
+			inf = medio + 1;
+		else
+			sup = medio - 1;
+	}
+	std::cout << pos;
+	return 0;
+}
+//Este es busqueda binaria
